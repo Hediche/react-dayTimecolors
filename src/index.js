@@ -1,28 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 const date = new Date();
 const currentTime = date.getHours();
-
-let greeting;
-
-const costomStyle = {
+const customStyle = {
   color: ""
 };
+let greeting;
 
 if (currentTime < 12) {
-  greeting = "Good Morning";
-  costomStyle.color = "red";
+  greeting = "It is Morning!";
+  customStyle.color = "green";
 } else if (currentTime < 18) {
-  greeting = "Good Afternoon";
-  costomStyle.color = "green";
+  greeting = "It is Afternoon";
+  customStyle.color = "red";
 } else {
-  greeting = "Good Night";
-  costomStyle.color = "blue";
+  greeting = "It is Night";
+  customStyle.color = "blue";
 }
-console.log(currentTime);
 
 ReactDOM.render(
-  <h1 className="heading" style={costomStyle}>
+  <h1 className="heading" style={customStyle}>
     {greeting}
   </h1>,
   document.getElementById("root")
